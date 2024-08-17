@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Monitoring Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        #food-routine {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        #food-log-form {
+            margin-bottom: 20px;
+        }
+
+        #food-log-form label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        #food-log-form input,
+        #food-log-form select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        #food-log-form button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        #food-log-form button:hover {
+            background-color: #555;
+        }
+
+        #meal-log {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #meal-log li {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fitness Monitoring Site</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#workouts">Workouts</a></li>
+                <li><a href="#nutrition">Nutrition</a></li>
+                <li><a href="#progress">Progress Tracking</a></li>
+                <li><a href="#goals">Goals</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#profile">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="home">
+            <h2>Welcome to Your Fitness Journey</h2>
+            <p>Track your workouts, monitor your nutrition, and achieve your fitness goals.</p>
+            <button onclick="location.href='#signup'">Sign Up</button>
+        </section>
+        
+        <section id="dashboard">
+            <h2>User Dashboard</h2>
+            <p>Overview of your fitness activities and progress.</p>
+        </section>
+        
+        <section id="workouts">
+            <h2>Workouts</h2>
+            <p>Explore workout routines and create your own.</p>
+        </section>
+        
+        <section id="nutrition">
+            <h2>Nutrition</h2>
+            <p>Log your meals and track your nutrition.</p>
+            
+            <div id="food-routine">
+                <h3>Daily Food Routine</h3>
+                <form id="food-log-form">
+                    <label for="meal-type">Meal Type:</label>
+                    <select id="meal-type" name="meal-type">
+                        <option value="breakfast">Breakfast</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="dinner">Dinner</option>
+                        <option value="snack">Snack</option>
+                    </select>
+                    
+                    <label for="food-item">Food Item:</label>
+                    <input type="text" id="food-item" name="food-item" required>
+                    
+                    <label for="calories">Calories:</label>
+                    <input type="number" id="calories" name="calories" required>
+                    
+                    <button type="submit">Add Meal</button>
+                </form>
+                
+                <h4>Logged Meals</h4>
+                <ul id="meal-log">
+                    <!-- Meal items will be added here dynamically -->
+                </ul>
+            </div>
+        </section>
+        
+        <section id="progress">
+            <h2>Progress Tracking</h2>
+            <p>Monitor your fitness progress and set new goals.</p>
+        </section>
+        
+        <section id="goals">
+            <h2>Goals</h2>
+            <p>Set and track your fitness goals.</p>
+        </section>
+        
+        <section id="community">
+            <h2>Community</h2>
+            <p>Join fitness forums and connect with others.</p>
+        </section>
+        
+        <section id="resources">
+            <h2>Resources</h2>
+            <p>Read our blog, guides, and FAQs.</p>
+        </section>
+        
+        <section id="profile">
+            <h2>Profile</h2>
+            <p>Manage your account settings and information.</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Fitness Monitoring Site. All rights reserved.</p>
+        <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('JavaScript loaded');
+
+            // Handle form submission
+            document.getElementById('food-log-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                // Get form values
+                const mealType = document.getElementById('meal-type').value;
+                const foodItem = document.getElementById('food-item').value;
+                const calories = document.getElementById('calories').value;
+
+                // Create a new list item
+                const newMeal = document.createElement('li');
+                newMeal.textContent = ${mealType.charAt(0).toUpperCase() + mealType.slice(1)}: ${foodItem} - ${calories} calories;
+
+                // Add the new meal to the meal log
+                document.getElementById('meal-log').appendChild(newMeal);
+
+                // Clear the form
+                document.getElementById('food-log-form').reset();
+            });
+        });
+    </script>
+</body>
+</html>
